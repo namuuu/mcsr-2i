@@ -1,3 +1,8 @@
 name: MCSR-2I
 version: 1.0
 main: fr.namu.mcsr2i.MainSR
+api-version: 1.13
+commands:
+    start:
+        description: "Permet de démarrer la partie."
+        usage: "/start"

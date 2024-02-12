@@ -11,8 +11,6 @@ public class PlayerDamageEvent implements Listener {
 
     @EventHandler
     public void onPlayerDamage(EntityDamageEvent event) {
-        System.out.println("PlayerDamageEvent");
-
         if(!(event.getEntity() instanceof Player)) {
             return;
         }

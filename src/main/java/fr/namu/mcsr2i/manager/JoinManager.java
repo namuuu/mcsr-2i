@@ -1,12 +1,14 @@
 package fr.namu.mcsr2i.manager;
 
 import fr.namu.mcsr2i.MainSR;
-import fr.namu.mcsr2i.scoreboard.FastBoard;
+import fr.namu.mcsr2i.scoreboard.ScoreboardSR;
+import fr.namu.mcsr2i.util.ItemUtil;
 import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import java.util.Objects;
 
 public class JoinManager {
 
@@ -15,25 +17,18 @@ public class JoinManager {
 
         Bukkit.broadcastMessage("§a+ §7» §e" + player.getName());
 
-        main.setBoard(player.getUniqueId(), new FastBoard(player));
-        main.scoreboard.updateBoard();
+//        main.setBoard(player.getUniqueId(), new FastBoard(player));
+        ScoreboardSR sb = MainSR.getInstance().scoreboard;
+        sb.addPlayer(player);
 
-        MainSR.getPlayer(player.getUniqueId());
-
-        // Clear Player
-        player.setHealth(20.0D);
-        player.setFoodLevel(20);
-        player.getInventory().clear();
-        player.getInventory().setArmorContents(null);
-        player.setExp(0.0F);
-        player.setLevel(0);
-        player.setFireTicks(0);
-        player.setSaturation(20.0F);
-        player.setAllowFlight(false);
-        player.setFlying(false);
-        player.setGameMode(GameMode.ADVENTURE);
+        MainSR.putPlayer(player);
+        ItemUtil.lobbyEquip(player);
 
         // Give Saturation Potion Effect
+        for(PotionEffect pe : player.getActivePotionEffects())
+            player.removePotionEffect(pe.getType());
         player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, Integer.MAX_VALUE, 0, false , false));
+
+        player.teleport(Objects.requireNonNull(Bukkit.getWorld("world")).getSpawnLocation());
     }
 }
