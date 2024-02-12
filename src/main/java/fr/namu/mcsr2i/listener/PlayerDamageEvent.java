@@ -20,5 +20,14 @@ public class PlayerDamageEvent implements Listener {
             event.setCancelled(true);
             return;
         }
+
+        switch (event.getCause()) {
+            case ENTITY_ATTACK:
+            case ENTITY_SWEEP_ATTACK:
+                // Cancel damage if the source is from a player
+                if(event.getDamageSource().getCausingEntity() instanceof Player) {
+                    event.setCancelled(true);
+                }
+        }
     }
 }

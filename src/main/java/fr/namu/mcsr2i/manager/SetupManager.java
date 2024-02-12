@@ -1,6 +1,7 @@
 package fr.namu.mcsr2i.manager;
 
 import fr.namu.mcsr2i.MainSR;
+import fr.namu.mcsr2i.enumerator.GroupEnum;
 import fr.namu.mcsr2i.enumerator.TeamEnum;
 import fr.namu.mcsr2i.object.TeamSR;
 import org.bukkit.*;
@@ -64,5 +65,8 @@ public class SetupManager {
             MainSR.putTeam(new TeamSR(team));
             sb.registerNewTeam(team.getName()).setPrefix(team.getPrefix());
         }
+
+        sb.registerNewTeam(GroupEnum.SPECTATOR.getName()).setPrefix(GroupEnum.SPECTATOR.getPrefix());
+        sb.registerNewTeam(GroupEnum.HOST.getName()).setPrefix(GroupEnum.HOST.getPrefix());
     }
 }

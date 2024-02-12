@@ -1,8 +1,10 @@
 package fr.namu.mcsr2i.object;
 
 import fr.namu.mcsr2i.enumerator.GameStateEnum;
+import fr.namu.mcsr2i.enumerator.GroupEnum;
 import fr.namu.mcsr2i.enumerator.TeamEnum;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ public class TeamSR {
 
     private TeamEnum teamEnum;
     private final ArrayList<PlayerSR> players = new ArrayList<>();
+
+    private Location spawn;
 
     public TeamSR(TeamEnum team) {
         this.teamEnum = team;
@@ -45,6 +49,14 @@ public class TeamSR {
         teamEnum.setSize(size);
     }
 
+    public Location getSpawn() {
+        return spawn;
+    }
+
+    public void setSpawn(Location loc) {
+        this.spawn = loc;
+    }
+
     public void addPlayer(PlayerSR psr) {
         if(psr.getTeam() != null) {
             psr.getTeam().removePlayer(psr);
@@ -53,6 +65,7 @@ public class TeamSR {
 
         players.add(psr);
         psr.setTeam(this);
+        psr.setGroup(GroupEnum.PLAYER);
 
         // Change player hover name
         Objects.requireNonNull(Objects.requireNonNull(Bukkit.getScoreboardManager()).getMainScoreboard().getTeam(teamEnum.getName())).addEntry(psr.getName());
@@ -65,6 +78,12 @@ public class TeamSR {
 
     public void removePlayer(PlayerSR player) {
         players.remove(player);
+        player.setTeam(null);
+
+        // Change player hover name
+        Objects.requireNonNull(Objects.requireNonNull(Bukkit.getScoreboardManager()).getMainScoreboard().getTeam(teamEnum.getName())).removeEntry(player.getName());
+        // Change player list name
+        player.getPlayer().setPlayerListName(player.getName());
     }
 
     public ArrayList<PlayerSR> getPlayers() {

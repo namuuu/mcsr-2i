@@ -24,4 +24,8 @@ public class GameData {
             return this.gameState == state;
         }
 
+        public void setGameState(GameStateEnum state) {
+            this.gameState = state;
+        }
+
 }

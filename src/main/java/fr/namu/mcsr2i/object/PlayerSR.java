@@ -6,11 +6,11 @@ import org.bukkit.entity.Player;
 
 public class PlayerSR {
 
-    private GroupEnum group = GroupEnum.NOTEAM;
-    private TeamSR team;
+    private GroupEnum group = GroupEnum.PLAYER;
+    private TeamSR team = null;
 
-    private Player player;
-    private String name;
+    private final Player player;
+    private final String name;
 
     public PlayerSR(Player player) {
         this.player = player;

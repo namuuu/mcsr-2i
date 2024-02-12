@@ -20,8 +20,6 @@ public class InteractEvent implements Listener {
         ItemStack item = event.getItem();
         Player player = event.getPlayer();
 
-
-
         if(item == null || !item.hasItemMeta() || !Objects.requireNonNull(item.getItemMeta()).hasDisplayName())
             return;
 

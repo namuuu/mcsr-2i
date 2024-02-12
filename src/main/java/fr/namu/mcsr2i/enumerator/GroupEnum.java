@@ -1,5 +1,24 @@
 package fr.namu.mcsr2i.enumerator;
 
 public enum GroupEnum {
-    NOTEAM, TEAM, SPECTATOR, HOST
+    PLAYER("Joueur", "§7"),
+    SPECTATOR("Spectateur", "§7"),
+    HOST("Host", "§c"),
+    ;
+
+    private String name;
+    private String prefix;
+
+    GroupEnum(String name, String prefix) {
+        this.name = name;
+        this.prefix = prefix;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
 }

@@ -2,6 +2,7 @@ package fr.namu.mcsr2i.scoreboard;
 
 import fr.namu.mcsr2i.MainSR;
 import fr.namu.mcsr2i.enumerator.GameStateEnum;
+import fr.namu.mcsr2i.manager.TimerManager;
 import fr.namu.mcsr2i.object.GameData;
 import net.megavex.scoreboardlibrary.api.ScoreboardLibrary;
 import net.megavex.scoreboardlibrary.api.exception.NoPacketAdapterAvailableException;
@@ -14,7 +15,7 @@ import net.kyori.adventure.text.Component;
 public class ScoreboardSR {
 
     public static ScoreboardLibrary lib;
-    private Sidebar sidebar;
+    public static Sidebar sidebar;
 
     public void setup() {
         MainSR main = MainSR.getInstance();
@@ -26,30 +27,45 @@ public class ScoreboardSR {
             lib = new NoopScoreboardLibrary();
             main.getLogger().warning("No scoreboard packet adapter available!");
         }
-        updateBoard();
+        instantiateBoard();
     }
 
     public void addPlayer(Player player) {
         sidebar.addPlayer(player);
     }
 
-    public void updateBoard() {
-        GameData gameData = GameData.getInstance();
+    public void instantiateBoard() {
         sidebar = lib.createSidebar();
-
-        if(gameData.isState(GameStateEnum.PREGAME))
-            lobbyScoreboard();
 
         for(Player player : Bukkit.getOnlinePlayers()) {
             sidebar.addPlayer(player);
         }
     }
 
-    private void lobbyScoreboard() {
+    public static void updateBoard() {
+        GameData gameData = GameData.getInstance();
+
+        if(gameData.isState(GameStateEnum.PREGAME))
+            lobbyScoreboard();
+        if(gameData.isState(GameStateEnum.INGAME))
+            ingameScoreboard();
+
+    }
+
+    private static void lobbyScoreboard() {
         String title = "§7• §6§lMCSR2I §7•";
         sidebar.title(Component.text(title));
         sidebar.line(1, Component.text("§7§m----------------------"));
         sidebar.line(2, Component.text("Joueurs: §c" + Bukkit.getOnlinePlayers().size()));
+        sidebar.line(3, Component.empty());
+        sidebar.line(4, Component.text("§7§m----------------------"));
+    }
+
+    private static void ingameScoreboard() {
+        String title = "§7• §6§lMCSR2I §7•";
+        sidebar.title(Component.text(title));
+        sidebar.line(1, Component.text("§7§m----------------------"));
+        sidebar.line(2, Component.text("Timer: §c" + TimerManager.getTextTimer()));
         sidebar.line(3, Component.empty());
         sidebar.line(4, Component.text("§7§m----------------------"));
     }
