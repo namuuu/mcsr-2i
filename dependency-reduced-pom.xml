@@ -33,7 +33,14 @@
             </goals>
           </execution>
         </executions>
-        <configuration />
+        <configuration>
+          <relocations>
+            <relocation>
+              <pattern>fr.mrmicky.fastboard</pattern>
+              <shadedPattern>fr.namu.fastboard</shadedPattern>
+            </relocation>
+          </relocations>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -41,10 +48,6 @@
     <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-    </repository>
-    <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io/</url>
     </repository>
   </repositories>
   <dependencies>

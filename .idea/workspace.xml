@@ -4,26 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f8e1327-4f56-499d-97a4-c8903801e55b" name="Changes" comment="Team Management System">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/GroupManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/TimerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/runnable/GameRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/TeamUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/TimerUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/WorldUtil.java" afterDir="false" />
+    <list default="true" id="1f8e1327-4f56-499d-97a4-c8903801e55b" name="Changes" comment="Wip: start game management">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/BedInteractEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/DragonKillEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/GroupEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/GroupEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/InteractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/InteractEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/MainSR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/MainSR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/TeamEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/TeamEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/PlayerDamageEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/PlayerDamageEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/JoinManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/JoinManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/SetupManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/SetupManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/StartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/StartManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/PlayerSR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/PlayerSR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/TeamSR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/TeamSR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/runnable/GameRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/runnable/GameRunnable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/scoreboard/ScoreboardSR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/scoreboard/ScoreboardSR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/ItemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/ItemUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/WorldUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/WorldUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +115,7 @@
       <workItem from="1707711989370" duration="350000" />
       <workItem from="1707712354844" duration="6749000" />
       <workItem from="1707749231544" duration="5481000" />
-      <workItem from="1707754751967" duration="13613000" />
+      <workItem from="1707754751967" duration="23667000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -136,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707766441504</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Wip: start game management">
+      <option name="closed" value="true" />
+      <created>1707771001492</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707771001492</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +151,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="Team Management System" />
-    <option name="LAST_COMMIT_MESSAGE" value="Team Management System" />
+    <MESSAGE value="Wip: start game management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wip: start game management" />
   </component>
 </project>

@@ -18,7 +18,7 @@ public class JoinManager {
         Bukkit.broadcastMessage("§a+ §7» §e" + player.getName());
 
         // Scoreboard setup
-        ScoreboardSR.sidebar.addPlayer(player);
+        ScoreboardSR.addPlayer(player);
         ScoreboardSR.updateBoard();
 
         MainSR.putPlayer(player);

@@ -34,7 +34,5 @@ public class WorldUtil {
                 psr.getPlayer().teleport(loc);
             }
         }
-
-
     }
 }

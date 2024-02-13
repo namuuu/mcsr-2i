@@ -30,6 +30,7 @@ public class ItemUtil {
         player.setAllowFlight(false);
         player.setFlying(false);
         player.setGameMode(GameMode.ADVENTURE);
+        player.setGlowing(false);
 
         // Give Saturation Potion Effect
         for(PotionEffect pe : player.getActivePotionEffects())
@@ -57,10 +58,10 @@ public class ItemUtil {
         player.setFireTicks(0);
         player.setSaturation(20.0F);
 
-        if(psr == null)
+        if (psr == null)
             return;
 
-        switch (psr.getGroup())  {
+        switch (psr.getGroup()) {
             case PLAYER:
                 player.setGameMode(GameMode.SURVIVAL);
                 break;
@@ -71,7 +72,9 @@ public class ItemUtil {
                 break;
         }
 
-        for(PotionEffect pe : player.getActivePotionEffects())
+        for (PotionEffect pe : player.getActivePotionEffects())
             player.removePotionEffect(pe.getType());
+        player.setGlowing(true);
+
     }
 }

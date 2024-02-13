@@ -28,13 +28,9 @@ public class MainSR extends JavaPlugin {
     public final JoinManager joinManager = new JoinManager();
     public final TeamManager teamManager = new TeamManager();
 
-    public final ScoreboardSR scoreboard = new ScoreboardSR();
-
     @Override
     public void onEnable() {
         instance = this;
-
-        scoreboard.setup();
 
         registerEvents();
         registerCommands();
@@ -46,7 +42,7 @@ public class MainSR extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        ScoreboardSR.lib.close();
+
     }
 
     public static MainSR getInstance() {
@@ -87,6 +83,8 @@ public class MainSR extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.PlayerDamageEvent(), this);
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.InteractEvent(), this);
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.ClickEvent(), this);
+        getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.DragonKillEvent(), this);
+        getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.BedInteractEvent(), this);
     }
 
     private void registerCommands() {

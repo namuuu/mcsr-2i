@@ -64,6 +64,8 @@ public class SetupManager {
         for(TeamEnum team : TeamEnum.values()) {
             MainSR.putTeam(new TeamSR(team));
             sb.registerNewTeam(team.getName()).setPrefix(team.getPrefix());
+            Objects.requireNonNull(sb.getTeam(team.getName())).setColor(team.getChatColor());
+//            sb.getTeam(team.getName()).setOption(Team.Option.COLLISION_RULE, Team.OptionStatus.NEVER);
         }
 
         sb.registerNewTeam(GroupEnum.SPECTATOR.getName()).setPrefix(GroupEnum.SPECTATOR.getPrefix());

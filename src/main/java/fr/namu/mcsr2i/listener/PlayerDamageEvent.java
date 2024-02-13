@@ -16,7 +16,7 @@ public class PlayerDamageEvent implements Listener {
         }
 
         GameData gameData = GameData.getInstance();
-        if(gameData.isState(GameStateEnum.PREGAME) || gameData.isState(GameStateEnum.POSTGAME)) {
+        if(gameData.isState(GameStateEnum.PREGAME) || gameData.isState(GameStateEnum.POSTGAME) || gameData.isGracePeriod()) {
             event.setCancelled(true);
             return;
         }
