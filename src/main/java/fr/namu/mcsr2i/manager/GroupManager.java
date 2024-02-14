@@ -36,5 +36,11 @@ public class GroupManager {
             Objects.requireNonNull(Objects.requireNonNull(Bukkit.getScoreboardManager()).getMainScoreboard().getTeam(psr.getGroup().getName())).removeEntry(player.getName());
             player.setPlayerListName(player.getName());
         }
+
+        if(psr.isHost()) {
+            psr.setHost(false);
+        }
+
+        psr.setGroup(GroupEnum.PLAYER);
     }
 }

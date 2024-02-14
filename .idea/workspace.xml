@@ -5,22 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f8e1327-4f56-499d-97a4-c8903801e55b" name="Changes" comment="Wip: start game management">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/BedInteractEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/DragonKillEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/commands/HostCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/ScenarioEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/BlockBreakingEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/menu/HostMainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/menu/ScenarioMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/MainSR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/MainSR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/GroupEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/GroupEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/StringEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/StringEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/TeamEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/enumerator/TeamEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/BedInteractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/BedInteractEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/ClickEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/ClickEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/DragonKillEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/DragonKillEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/InteractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/InteractEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/JoinLeaveEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/JoinLeaveEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/PlayerDamageEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/listener/PlayerDamageEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/GroupManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/GroupManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/JoinManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/JoinManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/SetupManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/SetupManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/StartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/manager/StartManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/runnable/GameRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/runnable/GameRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/scoreboard/ScoreboardSR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/scoreboard/ScoreboardSR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/menu/TeamSelectionMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/menu/TeamSelectionMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/PlayerSR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/object/PlayerSR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/ItemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/ItemBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/ItemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/ItemUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/WorldUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/namu/mcsr2i/util/WorldUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,26 +69,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Maven.mcsr-2i [clean].executor": "Run",
-    "Maven.mcsr-2i [install].executor": "Run",
-    "Maven.mcsr-2i [package].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Workspace/IG2I/mcsr-2i",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Maven.mcsr-2i [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mcsr-2i [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mcsr-2i [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mcsr-2i [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mcsr-2i [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/IG2I/mcsr-2i&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Workspace\IG2I\mcsr-2i\src\main\resources" />
@@ -116,6 +129,10 @@
       <workItem from="1707712354844" duration="6749000" />
       <workItem from="1707749231544" duration="5481000" />
       <workItem from="1707754751967" duration="23667000" />
+      <workItem from="1707849300782" duration="46000" />
+      <workItem from="1707849357191" duration="648000" />
+      <workItem from="1707850465761" duration="14618000" />
+      <workItem from="1707898681247" duration="1367000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />

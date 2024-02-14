@@ -10,10 +10,7 @@ import fr.namu.mcsr2i.scoreboard.ScoreboardSR;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class MainSR extends JavaPlugin {
 
@@ -85,9 +82,11 @@ public class MainSR extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.ClickEvent(), this);
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.DragonKillEvent(), this);
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.BedInteractEvent(), this);
+        getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.BlockBreakingEvent(), this);
     }
 
     private void registerCommands() {
-        getCommand("start").setExecutor(new fr.namu.mcsr2i.commands.StartCommand());
+        Objects.requireNonNull(getCommand("start")).setExecutor(new fr.namu.mcsr2i.commands.StartCommand());
+        Objects.requireNonNull(getCommand("host")).setExecutor(new fr.namu.mcsr2i.commands.HostCommand());
     }
 }

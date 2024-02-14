@@ -2,6 +2,7 @@ package fr.namu.mcsr2i.manager;
 
 import fr.namu.mcsr2i.MainSR;
 import fr.namu.mcsr2i.enumerator.GameStateEnum;
+import fr.namu.mcsr2i.enumerator.ScenarioEnum;
 import fr.namu.mcsr2i.object.GameData;
 import fr.namu.mcsr2i.object.PlayerSR;
 import fr.namu.mcsr2i.runnable.GameRunnable;
@@ -10,7 +11,9 @@ import fr.namu.mcsr2i.util.ItemUtil;
 import fr.namu.mcsr2i.util.TeamUtil;
 import fr.namu.mcsr2i.util.WorldUtil;
 import org.bukkit.Bukkit;
+import org.bukkit.GameRule;
 import org.bukkit.Sound;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 
 public class StartManager {
@@ -32,6 +35,15 @@ public class StartManager {
             if(countdown == 0) {
                 Bukkit.broadcastMessage("§aLa partie commence !");
                 Bukkit.getScheduler().cancelTasks(MainSR.getInstance());
+
+                // UHC Scenario
+                World world = Bukkit.getWorld("world");
+                assert world != null;
+                if(ScenarioEnum.UHC.isEnabled()) {
+                    world.setGameRule(GameRule.NATURAL_REGENERATION, false);
+                } else {
+                    world.setGameRule(GameRule.NATURAL_REGENERATION, true);
+                }
 
                 // Fill spectators
                 TeamUtil.fillSpectator();

@@ -16,7 +16,7 @@ public class TeamSelectionMenu extends MenuSR {
     private static TeamSelectionMenu instance;
 
     public TeamSelectionMenu() {
-        this.title = "§7Sélection de l'équipe";
+        this.title = StringEnum.MENU_TITLE_TEAM_SELECTION.getValue();
     }
 
     public static TeamSelectionMenu getInstance() {
@@ -33,23 +33,23 @@ public class TeamSelectionMenu extends MenuSR {
                 continue;
             inv.setItem(slot, ItemBuilder.teamBannerEdit(team));
             slot += 1;
+            if(slot == 34)
+                slot = 38;
         }
 
         inv.setItem(49, new ItemBuilder(Material.BARRIER, 1).setName(StringEnum.MENU_ITEM_QUIT.getValue()).toItemStack());
 
-        int[] slotGray = {
-                3,4,5,11,15,19,25,27,35,36,44,46,47,48,50,51,52 };
+        int[] slotGray = {3, 4, 5, 11, 15, 19, 25, 27, 35, 36, 44, 46, 47, 48, 50, 51, 52};
         for (int slotGlass : slotGray)
-            inv.setItem(slotGlass, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE, 1).setName(" ").toItemStack());
-        int[] slotWhite = {
-                0, 1, 2, 6, 7, 8, 9, 10, 16, 17, 18, 26, 45 };
+            inv.setItem(slotGlass, new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE, 1).setName(" ").toItemStack());
+
+        int[] slotWhite = {0, 1, 2, 6, 7, 8, 9, 10, 16, 17, 18, 26, 45, 53};
         for (int slotGlass : slotWhite)
-            inv.setItem(slotGlass, new ItemBuilder(Material.WHITE_STAINED_GLASS_PANE, 1).setName(" ").toItemStack());
+            inv.setItem(slotGlass, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE, 1).setName(" ").toItemStack());
     }
 
     @Override
     public void click(Player player, Material mat, String itemName) {
-        System.out.println(itemName);
         if(itemName.equals(StringEnum.MENU_ITEM_QUIT.getValue())) {
             player.closeInventory();
         }

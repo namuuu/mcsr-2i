@@ -11,6 +11,7 @@ public class JoinLeaveEvent implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         event.setJoinMessage("");
+        System.out.println("Player " + event.getPlayer().getName() + " joined the game!");
 
         MainSR.getInstance().joinManager.joinPlayer(event.getPlayer());
     }

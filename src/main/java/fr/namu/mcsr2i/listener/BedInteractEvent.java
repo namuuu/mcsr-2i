@@ -15,6 +15,6 @@ public class BedInteractEvent implements Listener {
         if(!event.getClickedBlock().getType().toString().contains("BED"))
             return;
 
-        GameData.getInstance().setLastBedUser(event.getPlayer())    ;
+        GameData.getInstance().setLastBedUser(event.getPlayer());
     }
 }

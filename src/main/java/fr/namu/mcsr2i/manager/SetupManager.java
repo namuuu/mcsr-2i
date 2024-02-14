@@ -69,6 +69,5 @@ public class SetupManager {
         }
 
         sb.registerNewTeam(GroupEnum.SPECTATOR.getName()).setPrefix(GroupEnum.SPECTATOR.getPrefix());
-        sb.registerNewTeam(GroupEnum.HOST.getName()).setPrefix(GroupEnum.HOST.getPrefix());
     }
 }

@@ -1,6 +1,7 @@
 package fr.namu.mcsr2i.listener;
 
 import fr.namu.mcsr2i.enumerator.StringEnum;
+import fr.namu.mcsr2i.menu.HostMainMenu;
 import fr.namu.mcsr2i.menu.TeamSelectionMenu;
 import fr.namu.mcsr2i.object.GameData;
 import org.bukkit.entity.Player;
@@ -26,6 +27,9 @@ public class InteractEvent implements Listener {
         String itemName = item.getItemMeta().getDisplayName();
         if(itemName.equals(StringEnum.ITEM_TEAM_SELECTION.getValue())) {
             TeamSelectionMenu.getInstance().open(player);
+        }
+        if(itemName.equals(StringEnum.ITEM_HOST_MENU.getValue())) {
+            HostMainMenu.getInstance().open(player);
         }
     }
 }

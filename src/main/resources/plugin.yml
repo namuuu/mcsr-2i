@@ -6,3 +6,6 @@ commands:
     start:
         description: "Permet de démarrer la partie."
         usage: "/start"
+    host:
+        description: "Gère toutes les interactions avec les hôtes de la partie."
+        usage: "/host"

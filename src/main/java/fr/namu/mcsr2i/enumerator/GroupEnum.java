@@ -3,7 +3,6 @@ package fr.namu.mcsr2i.enumerator;
 public enum GroupEnum {
     PLAYER("Joueur", "§7"),
     SPECTATOR("Spectateur", "§7"),
-    HOST("Host", "§c"),
     ;
 
     private String name;

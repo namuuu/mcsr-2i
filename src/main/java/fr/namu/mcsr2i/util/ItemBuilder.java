@@ -38,7 +38,8 @@ public class ItemBuilder {
 
         List<String> lore = new ArrayList<>();
         lore.add("§7Taille: " + team.getSize());
-        lore.add(" ");
+        if(!team.getPlayers().isEmpty())
+            lore.add(" ");
         for(PlayerSR player : team.getPlayers()) {
             lore.add("§8- §7" + player.getName());
         }

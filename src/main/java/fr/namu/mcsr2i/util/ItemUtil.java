@@ -2,6 +2,8 @@ package fr.namu.mcsr2i.util;
 
 import fr.namu.mcsr2i.MainSR;
 import fr.namu.mcsr2i.enumerator.GroupEnum;
+import fr.namu.mcsr2i.enumerator.ScenarioEnum;
+import fr.namu.mcsr2i.enumerator.StringEnum;
 import fr.namu.mcsr2i.object.PlayerSR;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -35,13 +37,13 @@ public class ItemUtil {
         // Give Saturation Potion Effect
         for(PotionEffect pe : player.getActivePotionEffects())
             player.removePotionEffect(pe.getType());
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, Integer.MAX_VALUE, 0, false , false));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, Integer.MAX_VALUE, 0, false , false, false));
 
         inv.setItem(4, ItemBuilder.teamBannerHotbar(psr.getTeam()));
 
-        if(psr.getGroup() == GroupEnum.HOST)
-            inv.setItem(8, new ItemBuilder(Material.NETHER_STAR, 1)
-                    .setName("§eMenu du Host ")
+        if(psr.isHost())
+            inv.setItem(7, new ItemBuilder(Material.NETHER_STAR, 1)
+                    .setName(StringEnum.ITEM_HOST_MENU.getValue())
                     .toItemStack()
             );
     }
@@ -66,7 +68,6 @@ public class ItemUtil {
                 player.setGameMode(GameMode.SURVIVAL);
                 break;
             case SPECTATOR:
-            case HOST:
             default:
                 player.setGameMode(GameMode.SPECTATOR);
                 break;
@@ -75,6 +76,9 @@ public class ItemUtil {
         for (PotionEffect pe : player.getActivePotionEffects())
             player.removePotionEffect(pe.getType());
         player.setGlowing(true);
+
+        if(ScenarioEnum.CAT_EYES.isEnabled())
+            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, false, false, false));
 
     }
 }
