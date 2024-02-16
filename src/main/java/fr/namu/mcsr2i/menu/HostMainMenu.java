@@ -29,8 +29,10 @@ public class HostMainMenu extends MenuSR {
 
         inventory.setItem(21, new ItemBuilder(Material.EMERALD_BLOCK, 1).setName(StringEnum.MENU_ITEM_START.getValue()).toItemStack());
         inventory.setItem(23, new ItemBuilder(Material.COMPARATOR, 1).setName(StringEnum.MENU_ITEM_CONFIG.getValue()).toItemStack());
+        inventory.setItem(31, new ItemBuilder(Material.WHITE_BANNER, 1).setName(StringEnum.MENU_ITEM_TEAMCONFIG.getValue()).toItemStack());
         inventory.setItem(49, new ItemBuilder(Material.BARRIER, 1).setName(StringEnum.MENU_ITEM_QUIT.getValue()).toItemStack());
         inventory.setItem(53, new ItemBuilder(Material.SKELETON_SKULL, 1).setName(StringEnum.MENU_ITEM_QUIT_HOST.getValue()).toItemStack());
+
 
         int[] slotWhite = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 44, 45, 46, 52};
         for (int slotGlass : slotWhite)
@@ -61,6 +63,11 @@ public class HostMainMenu extends MenuSR {
             psr.setHost(false);
             ItemUtil.lobbyEquip(player);
             player.closeInventory();
+        }
+
+        if(itemName.equals(StringEnum.MENU_ITEM_TEAMCONFIG.getValue())) {
+            // Open the team config menu
+            TeamEditionMenu.getInstance().open(player);
         }
     }
 }

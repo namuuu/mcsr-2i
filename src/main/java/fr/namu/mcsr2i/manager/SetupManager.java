@@ -4,6 +4,7 @@ import fr.namu.mcsr2i.MainSR;
 import fr.namu.mcsr2i.enumerator.GroupEnum;
 import fr.namu.mcsr2i.enumerator.TeamEnum;
 import fr.namu.mcsr2i.object.TeamSR;
+import fr.namu.mcsr2i.runnable.GlassColorRunnable;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
@@ -44,6 +45,8 @@ public class SetupManager {
             (new Location(world, (x + 16), y+1, (i + z))).getBlock().setType(Material.BARRIER);
             (new Location(world, (x + 16), y+2, (i + z))).getBlock().setType(Material.BARRIER);
         }
+
+        Bukkit.getScheduler().runTaskTimer(MainSR.getInstance(), new GlassColorRunnable(), 0L, 2L);
     }
 
     public void reloadPlayers() {
@@ -69,5 +72,6 @@ public class SetupManager {
         }
 
         sb.registerNewTeam(GroupEnum.SPECTATOR.getName()).setPrefix(GroupEnum.SPECTATOR.getPrefix());
+        Objects.requireNonNull(sb.getTeam(GroupEnum.SPECTATOR.getName())).setColor(ChatColor.GRAY);
     }
 }

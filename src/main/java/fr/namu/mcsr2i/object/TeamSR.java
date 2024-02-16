@@ -45,6 +45,10 @@ public class TeamSR {
         teamEnum.setEnabled(isEnabled);
     }
 
+    public void toggle() {
+        teamEnum.toggle();
+    }
+
     public void setSize(int size) {
         teamEnum.setSize(size);
     }
@@ -55,6 +59,10 @@ public class TeamSR {
 
     public void setSpawn(Location loc) {
         this.spawn = loc;
+    }
+
+    public Material getGlassColor() {
+        return teamEnum.getGlassColor();
     }
 
     public void addPlayer(PlayerSR psr) {

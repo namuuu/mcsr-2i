@@ -16,7 +16,7 @@ public class ScoreboardSR {
 
     private static final Map<UUID, FastBoard> boards = new HashMap<>();
 
-    private static final String title = "§7• §6§lMCSR2I §7•";
+    private static String title = "§7• §6§lMCSR2I §7•";
 
     public static void addPlayer(Player player) {
         boards.put(player.getUniqueId(), new FastBoard(player));
@@ -33,6 +33,10 @@ public class ScoreboardSR {
             if(gameData.isState(GameStateEnum.INGAME))
                 ingameScoreboard(board);
         }
+    }
+
+    public static void setTitle(String newTitle) {
+        title = "§6§l" + newTitle;
     }
 
     private static void lobbyScoreboard(FastBoard board) {

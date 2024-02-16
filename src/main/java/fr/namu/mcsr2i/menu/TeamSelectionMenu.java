@@ -2,7 +2,6 @@ package fr.namu.mcsr2i.menu;
 
 import fr.namu.mcsr2i.MainSR;
 import fr.namu.mcsr2i.enumerator.StringEnum;
-import fr.namu.mcsr2i.enumerator.TeamEnum;
 import fr.namu.mcsr2i.object.PlayerSR;
 import fr.namu.mcsr2i.object.TeamSR;
 import fr.namu.mcsr2i.util.ItemBuilder;
@@ -27,14 +26,15 @@ public class TeamSelectionMenu extends MenuSR {
 
     @Override
     public void replaceInventory(Player player, Inventory inv) {
-        int slot = 29;
+        int slot = 20;
+        PlayerSR psr = MainSR.getPlayer(player.getUniqueId());
         for(TeamSR team : MainSR.getTeams()) {
             if(!team.isEnabled())
                 continue;
-            inv.setItem(slot, ItemBuilder.teamBannerEdit(team));
+            inv.setItem(slot, ItemBuilder.teamBannerEdit(team, psr));
             slot += 1;
-            if(slot == 34)
-                slot = 38;
+            if((slot+2)%9 == 0)
+                slot += 4;
         }
 
         inv.setItem(49, new ItemBuilder(Material.BARRIER, 1).setName(StringEnum.MENU_ITEM_QUIT.getValue()).toItemStack());
@@ -54,19 +54,27 @@ public class TeamSelectionMenu extends MenuSR {
             player.closeInventory();
         }
 
-        MainSR main = MainSR.getInstance();
         PlayerSR psr = MainSR.getPlayer(player.getUniqueId());
 
         for(TeamSR team : MainSR.getTeams()) {
             if(team.getName().equals(itemName)) {
-                if(team == psr.getTeam()) {
-                    player.sendMessage("§cVous êtes déjà dans cette équipe !");
+                if(!team.isEnabled()) {
+                    player.sendMessage("§cCette équipe n'est pas activée !");
+                    player.closeInventory();
+                    return;
+                }
+                if(team.getPlayers().size() >= team.getSize()) {
+                    player.sendMessage("§cCette équipe est pleine !");
                     player.closeInventory();
                     return;
                 }
 
+                if(team == psr.getTeam()) {
+                    team.removePlayer(psr);
+                } else {
+                    team.addPlayer(psr);
+                }
 
-                team.addPlayer(psr);
                 ItemUtil.lobbyEquip(player);
                 player.closeInventory();
                 return;

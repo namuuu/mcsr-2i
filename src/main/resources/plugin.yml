@@ -9,3 +9,20 @@ commands:
     host:
         description: "Gère toutes les interactions avec les hôtes de la partie."
         usage: "/host"
+    shoutout:
+        description: "Permet de faire un shoutout."
+        usage: "/shoutout {shoutout}"
+        aliases:
+            - so
+    sbtitle:
+        description: "Permet de gérer le scoreboard."
+        usage: "/sbtitle {title}"
+        aliases:
+            - sb
+    seeinventory:
+        description: "Permet de voir l'inventaire d'un joueur."
+        usage: "/seeinventory {player}"
+        aliases:
+            - si
+            - seeinv
+            - see

@@ -6,7 +6,6 @@ import fr.namu.mcsr2i.enumerator.ScenarioEnum;
 import fr.namu.mcsr2i.object.GameData;
 import fr.namu.mcsr2i.object.PlayerSR;
 import fr.namu.mcsr2i.runnable.GameRunnable;
-import fr.namu.mcsr2i.scoreboard.ScoreboardSR;
 import fr.namu.mcsr2i.util.ItemUtil;
 import fr.namu.mcsr2i.util.TeamUtil;
 import fr.namu.mcsr2i.util.WorldUtil;

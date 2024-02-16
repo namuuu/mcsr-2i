@@ -83,10 +83,14 @@ public class MainSR extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.DragonKillEvent(), this);
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.BedInteractEvent(), this);
         getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.BlockBreakingEvent(), this);
+        getServer().getPluginManager().registerEvents(new fr.namu.mcsr2i.listener.ChatEvent(), this);
     }
 
     private void registerCommands() {
         Objects.requireNonNull(getCommand("start")).setExecutor(new fr.namu.mcsr2i.commands.StartCommand());
         Objects.requireNonNull(getCommand("host")).setExecutor(new fr.namu.mcsr2i.commands.HostCommand());
+        Objects.requireNonNull(getCommand("shoutout")).setExecutor(new fr.namu.mcsr2i.commands.ShoutoutCommand());
+        Objects.requireNonNull(getCommand("sbtitle")).setExecutor(new fr.namu.mcsr2i.commands.ScoreboardTitleCommand());
+        Objects.requireNonNull(getCommand("seeinventory")).setExecutor(new fr.namu.mcsr2i.commands.SeeInventoryCommand());
     }
 }

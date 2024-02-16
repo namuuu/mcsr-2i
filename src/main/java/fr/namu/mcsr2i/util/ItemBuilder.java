@@ -29,7 +29,7 @@ public class ItemBuilder {
         return item;
     }
 
-    public static ItemStack teamBannerEdit(TeamSR team) {
+    public static ItemStack teamBannerEdit(TeamSR team, PlayerSR psr) {
         ItemStack item = new ItemStack(team.getBanner(), 1);
         BannerMeta bm = (BannerMeta) item.getItemMeta();
         if(bm == null)
@@ -37,11 +37,17 @@ public class ItemBuilder {
         bm.setDisplayName(team.getName());
 
         List<String> lore = new ArrayList<>();
-        lore.add("§7Taille: " + team.getSize());
         if(!team.getPlayers().isEmpty())
             lore.add(" ");
         for(PlayerSR player : team.getPlayers()) {
             lore.add("§8- §7" + player.getName());
+        }
+        if(psr.getTeam() == team) {
+            lore.add(" ");
+            lore.add("§eCliquez pour quitter");
+        } else {
+            lore.add(" ");
+            lore.add("§eCliquez pour rejoindre");
         }
         bm.setLore(lore);
 
