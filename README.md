@@ -5,7 +5,7 @@
 This plugin has been made for the 1.20.4 version of Minecraft. Any other version isn't supported.
 
 ## Installation
-Go into the (release tab of the mcsr-2i repo)[https://github.com/namuuu/docto-2i/releases/tag/main-releases]. You can then download the mcsr-2i.jar file in the assets dropdown, and put it in the `plugins` folder of your Minecraft Server. The plugin should be running on your next reload of the Server!
+Go into the (release tab of the mcsr-2i repo)[https://github.com/namuuu/mcsr-2i/releases/tag/main-releases]. You can then download the mcsr-2i.jar file in the assets dropdown, and put it in the `plugins` folder of your Minecraft Server. The plugin should be running on your next reload of the Server!
 
 ## Start a Game
 You can start a game using the `/start` command or via the Host Main Menu.
